@@ -2,23 +2,17 @@
 
 ## PREREQUIS
 
-Ces scripts utilisent python, il va donc sans dire qu'il faut l'avoir d'installé sur son ordinateur pour le bon fonctionnement
-des scripts, vous pouvez télécharger la dernière version à cette adresse :  [Télécharger Python](https://www.python.org/downloads/).
+Ces scripts utilisent python, il va donc sans dire qu'il faut l'avoir d'installé sur son ordinateur pour le bon fonctionnement des scripts, vous pouvez télécharger la dernière version à cette adresse :  [Télécharger Python](https://www.python.org/downloads/).
 Il est probable que vous deviez redémarrer votre pc pour que l'installation soit opérationnelle.
 
 ## UTILISATION
 
 Vous trouverez 2 scripts:
-**lol_lobby_position.py** : est à lancer à chaque début de partie, il prend la position que vous occupez dans votre lobby et l'écrit
-dans le fichier *data_lol.txt*, qui s'il n'est pas déjà créé, le sera automatiquement
+**lol_lobby_position.py** : à lancer une et unique fois au démarrage du PC ou avant de jouer, le script détectera quand vous entrez en sélection de champions et prendra la position que vous occupez dans votre lobby pour l'écrire dans le fichier *data_lol.txt*, qui s'il n'est pas déjà créé, le sera automatiquement.
 
-**script.py** : est le fichier d'analyse des données recueillies dans le fichier *data_lol.txt*, il est bon à savoir qu'un bon échantillon
-pour ce genre de donnée est commence à partir de 500, voir 1000 parties. Cependant vous pouvez voir la progression de vos statistiques
-quand bon vous sembles.
+**script.py** : est le fichier d'analyse des données recueillies dans le fichier *data_lol.txt*, il est bon à savoir qu'un bon échantillon pour ce genre de donnée commence à partir de 500, si ce n'est 1000 parties. Cependant vous pouvez voir la progression de vos statistiques quand bon vous sembles.
 
-Si vous avez oublié de lancer le script mais que vous vous souvenez de votre position dans le lobby, vous pouvez rajouter la valeur à la main dans le
-fichier *data_lol.txt* se trouvant sur votre bureau (si vous suivez mes recommendations ci-dessous), et ajouter votre position à la fin de la chaine de
-nombre, sans ajouter d'espace, ni rien, simplement le nombre (first pick = 1 et last pick = 5).
+Si vous avez oublié de lancer le script mais que vous vous souvenez de votre position dans le lobby, vous pouvez rajouter la valeur à la main dans le  fichier *data_lol.txt* se trouvant sur votre bureau (si vous suivez mes recommendations ci-dessous), et ajouter votre position à la fin de la chaine de nombre, sans ajouter d'espace, ni rien, simplement le nombre (first pick = 1 et last pick = 5).
 
 Le premier script n'est malheureusement pas (encore) automatique, il faut donc penser à le lancer à chaque début de partie.
 
