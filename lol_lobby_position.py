@@ -22,19 +22,20 @@ async def find_position(connection, event):
             summoner = summoner['summonerId']
             get_cs_data = await connection.request('get', '/lol-champ-select/v1/session') #Get current summoner's Champ select data
             cs_data = await get_cs_data.json()
-            team_data = cs_data['myTeam']
-            for x in range(len(team_data)): #cycle through the players in the lobby to see if they're you (not tested in ranked)
-                print(team_data[x]["summonerId"]==summoner)
-                if(team_data[x]["summonerId"]==summoner):
-                    cell = str(team_data[x]["cellId"])
+            if(cs_data["isCustomGame"]==True | cs_data["isSpectating"]!=True):
+                team_data = cs_data['myTeam']
+                for x in range(len(team_data)): #cycle through the players in the lobby to see if they're you (not tested in ranked)
+                    print(team_data[x]["summonerId"]==summoner)
+                    if(team_data[x]["summonerId"]==summoner):
+                        cell = str(team_data[x]["cellId"])
                 
-        print(f"You have been placed {int(cell)+1}")
-        if(cell != -1):
-            f = open("data_lol.txt", "a")
-            f.write(cell)
-            f.close
-        else :
-            print("ça a pô marché")
+                print(f"You have been placed {int(cell)+1}")
+                if(cell != -1):
+                    f = open("data_lol.txt", "a")
+                    f.write(cell)
+                    f.close
+                else :
+                    print("ça a pô marché")
     return no_multiple
 
 @connector.close
